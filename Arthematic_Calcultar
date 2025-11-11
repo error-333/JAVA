@@ -1,0 +1,59 @@
+Arthematic_Calcultar
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.arthematic_calcultar;
+
+/**
+ *
+ * @author Students
+ */
+import java.util.Scanner;
+public class Arthematic_Calcultar {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter first number:");
+        double num1 = input.nextDouble();
+        System.out.println("Enter second number:");
+        double num2 = input.nextDouble();
+        
+        System.out.print("\n----Arithmatic calucultar menu----");
+        System.out.println("1.Addition");
+        System.out.println("2.substraction");
+        System.out.println("3.multipliction");
+        System.out.println("4.Division");
+        System.out.println("Enter your choice(1-4)");
+        
+        int choice = input.nextInt();
+        double result;
+        switch(choice){
+            case 1:
+                    result=num1+num2;
+                    System.out.println("result:"+result);
+                    break;
+            case 2:
+                    result=num1-num2;
+                    System.out.println("result:"+result);
+                    break;
+            case 3:
+                    result=num1*num2;
+                    System.out.println("result:"+result);
+                    break;
+            case 4:
+                   if (num2!=0){ 
+                    result=num1+num2;
+                    System.out.println("result:"+result);
+                   }else{
+                       System.out.println("Error: Division by zero is not allowed !");
+                   }
+                   break;
+            default:
+                   System.out.println("Invaild choice please select from 1 to 4");
+                   
+        }
+          input.close();
+    }
+}
