@@ -1,0 +1,144 @@
+Converter
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.convertere
+        ;
+
+/**
+ *
+ * @author Students
+ */
+
+
+import java.util.Scanner;
+
+class CurrencyConverter{
+    private final double DOLLAR_TO_INR=83.0;
+    private final double EURO_TO_INR=90.0;
+    private final double YEN_TO_INR=0.56;
+    public void convert() {
+     Scanner sc=new Scanner(System.in);
+        System.out.println("\n---Currency Converter---");
+        System.out.println("1.Dollar To INR");
+        System.out.println("2.INR To Dollar");
+        System.out.println("3.Euro To INR");
+        System.out.println("4.INR To Euro");
+        System.out.println("5.Yen To INR");
+        System.out.println("6.INR To Yen");
+        System.out.println("Enter your choice:");
+        int choice = sc.nextInt();
+        
+        System.out.println("Enter amount:");
+        double amount = sc.nextDouble();
+        double result = 0.0;
+        
+        switch(choice)
+        {
+            case 1 : result = amount*DOLLAR_TO_INR; break;
+            case 2 : result = amount/DOLLAR_TO_INR; break;
+            case 3 : result = amount*EURO_TO_INR; break;
+            case 4 : result = amount/EURO_TO_INR; break;
+            case 5 : result = amount*YEN_TO_INR; break;
+            case 6 : result = amount/YEN_TO_INR; break;
+            default:
+                System.out.println("Invalid choice!");
+                return;
+        }
+        System.out.println("Converted Value:"+result);
+    }
+}
+class DistanceConverter{
+    public void convert(){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("\n---Distance Converter---");
+        System.out.println("1.Meter to KM");
+        System.out.println("2.KM To Meter");
+        System.out.println("3.Miles To KM");
+        System.out.println("4.KM To Miles");
+        System.out.println("Enter your choice:");
+        int choice = sc.nextInt();
+        
+        System.out.println("Enter distance:");
+        double value = sc.nextDouble();
+        double result = 0.0;
+        
+         switch(choice)
+        {
+            case 1 : result = value / 1000; break;
+            case 2 : result = value * 1000 ; break;
+            case 3 : result = value / 1.60934; break;
+            case 4 : result = value * 1.60934; break;
+            default:
+                System.out.println("Invalid choice!");
+                return;
+        }
+        System.out.println("Converted Value:"+result);
+    }
+}
+class TimeConverter{
+    public void convert(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("\n---Time Converter---");
+        System.out.println("1.Hours To Minutes");
+        System.out.println("2.Hours To Seconds");
+        System.out.println("3.Minutes To Hours");
+        System.out.println("4.Seconds To Hours");
+        System.out.println("Enter your choice:");
+        int choice = sc.nextInt();
+        
+        System.out.println("Enter time:");
+        double time = sc.nextDouble();
+        double result = 0.0;  
+        switch(choice)
+        {
+            case 1 : result = time*60; break;
+            case 2 : result = time*3600 ; break;
+            case 3 : result = time/60; break;
+            case 4 : result =time/3600 ; break;
+            default:
+                System.out.println("Invalid choice!");
+                return;
+        }
+        System.out.println("Converted Value:"+result); 
+    }
+}
+public class Convertere {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        CurrencyConverter currency = new CurrencyConverter();
+        DistanceConverter distance = new DistanceConverter();
+        TimeConverter time = new TimeConverter();
+        while(true){
+            System.out.println("\n===All-in-one Converter===");
+            System.out.println("1.Currency Converter");
+            System.out.println("2. Distance Converte");
+            System.out.println("3.TimeConverter");
+            System.out.println("4.Exit");
+            System.out.println("Enter your choice:");
+            int choice = sc.nextInt();
+            
+            switch(choice){
+                case 1 : 
+                    currency.convert(); 
+                    break;
+                case 2 : 
+                    distance.convert(); 
+                    break;
+                case 3 : 
+                    time.convert();
+                    break;
+                case 4 :
+                    System.out.println("Exiting...Thank you!");
+                    sc.close();
+                    System.exit(0);
+                default:
+                    System.out.println("Invalid choice! Try Again");
+            }
+        }
+       
+    }
+}
