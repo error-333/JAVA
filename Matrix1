@@ -1,0 +1,62 @@
+Matrix1
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.matrix1;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author Students
+ */
+public class Matrix1 {
+
+    public static void main(String[] args) {
+        Scanner SC = new Scanner(System.in);
+        
+        System.out.println("enter the order of the matrix(N):");
+        int N = SC.nextInt();
+        int[][] A = new int[N][N];
+        int[][] B = new int[N][N];
+        int[][] C = new int[N][N];
+
+        // s4: Read first matrix
+        System.out.println("Enter elements of matrix A(" + N + "x" + N + ") :");
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                System.out.print("Matrix1 [" + i + "][" + j + "]: ");
+                A[i][j] = SC.nextInt();
+            }
+        }
+
+        // s5: Read second matrix
+        System.out.println("\nEnter elements of matrix B( " + N + "x" + N + " ):");
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                System.out.print("Matrix2 [" + i + "][" + j + "]: ");
+                B[i][j] = SC.nextInt();
+            }
+        }
+
+        // s6: Compute the sum
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                C[i][j] = A[i][j] + B[i][j];
+            }
+        }
+
+        // s7: Output the sum matrix
+        System.out.println("Resultant  Matrix C(A+B):");
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                System.out.print(C[i][j] + " ");
+            }
+            System.out.println();
+        }
+        
+        SC.close();
+    }
+}
