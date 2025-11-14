@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+class DivisionZeroException extends Exception {
+    public DivisionZeroException(String message) {
+        super(message);
+    }
+}
+
+public class Division {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        try {
+            
+            System.out.print("Enter numerator: ");
+            int numerator = input.nextInt();
+            
+            System.out.print("Enter denominator: ");
+            int denominator = input.nextInt();
+            
+            if(denominator==0) {
+                throw new DivisionZeroException ("Error: Division by zero is not allowed!");
+            }
+            
+            double result = (double)numerator / denominator;
+            System.out.println("Result: "+result);
+        }
+        catch (DivisionZeroException e) {
+            System.out.println("Caught Exception: "+ e.getMessage()) ;
+        }
+        finally {
+            System.out.println("Exception completed. Closing resources if any...");
+            input.close();
+        }
+    }
+
+}
